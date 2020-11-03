@@ -1,0 +1,162 @@
+@prefix : <http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/teodora/ontologies/2020/10/scientifictheoryModel> .
+
+<http://www.semanticweb.org/teodora/ontologies/2020/10/scientifictheoryModel> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#createdby
+:createdby rdf:type owl:ObjectProperty ;
+           rdfs:domain :Term ,
+                       :Theorem ,
+                       :Theory .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#hasIntendedScope
+:hasIntendedScope rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Theory .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#ispartof
+:ispartof rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Scientific_Domain .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#workswith
+:workswith rdf:type owl:ObjectProperty ;
+           rdfs:domain :Axiom ,
+                       :Definition ,
+                       :Fact ,
+                       :Hypothesis ,
+                       :Observation ,
+                       :Phenomenon ,
+                       :Principle ,
+                       :Term ,
+                       :Theorem .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Axiom
+:Axiom rdf:type owl:Class ;
+       rdfs:subClassOf :Episteme .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Concept
+:Concept rdf:type owl:Class ;
+         rdfs:subClassOf :Theory .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Definition
+:Definition rdf:type owl:Class ;
+            rdfs:subClassOf :Episteme .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Episteme
+:Episteme rdf:type owl:Class ;
+          rdfs:comment "This is the supreme genus of a Theory. THe Science Knowledge as per: https://philosophy-models.blog/2019/01/29/aristotles-categorization-of-sciences/"@en .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Fact
+:Fact rdf:type owl:Class ;
+      rdfs:subClassOf :Episteme .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Framework
+:Framework rdf:type owl:Class ;
+           rdfs:subClassOf :Theory .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Hypothesis
+:Hypothesis rdf:type owl:Class ;
+            rdfs:subClassOf :Episteme .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Observation
+:Observation rdf:type owl:Class ;
+             rdfs:subClassOf :Episteme .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Phenomenon
+:Phenomenon rdf:type owl:Class ;
+            rdfs:subClassOf :Episteme .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Principle
+:Principle rdf:type owl:Class ;
+           rdfs:subClassOf :Episteme .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Scientific_Discipline
+:Scientific_Discipline rdf:type owl:Class ;
+                       rdfs:subClassOf :Scientific_Domain .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Scientific_Domain
+:Scientific_Domain rdf:type owl:Class ;
+                   rdfs:subClassOf :Episteme .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Scientist
+:Scientist rdf:type owl:Class ;
+           rdfs:subClassOf :Episteme .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Term
+:Term rdf:type owl:Class ;
+      rdfs:subClassOf :Episteme .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Theorem
+:Theorem rdf:type owl:Class ;
+         rdfs:subClassOf :Episteme .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Theoretical_Model
+:Theoretical_Model rdf:type owl:Class ;
+                   rdfs:subClassOf :Theory .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/myfirst-ontology-2#Theory
+:Theory rdf:type owl:Class ;
+        rdfs:subClassOf :Episteme .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/scientifictheoryModel#Dialogic_loop
+:Dialogic_loop rdf:type owl:NamedIndividual ,
+                        :Principle .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/scientifictheoryModel#Dialogue
+:Dialogue rdf:type owl:NamedIndividual ,
+                   :Concept .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/scientifictheoryModel#Michael_L._Kent
+:Michael_L._Kent rdf:type owl:NamedIndividual ,
+                          :Scientist ;
+                 rdfs:seeAlso "https://orcid.org/0000-0001-7968-5142" .
+
+
+###  http://www.semanticweb.org/teodora/ontologies/2020/10/scientifictheoryModel#dialogic_public_relationships_theory
+:dialogic_public_relationships_theory rdf:type owl:NamedIndividual ,
+                                               :Theory ;
+                                      :createdby :Michael_L._Kent ;
+                                      rdfs:comment "This will be describe as per: https://en.wikipedia.org/wiki/Dialogic_public_relations_theory (and futher as per several scientific papers by M. Kent.)" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
